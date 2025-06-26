@@ -1,0 +1,46 @@
+{
+	"metrics-server": { "port": 6070, "addr": "0.0.0.0" },
+	"chain": {
+		"info-json": "[{\"chain-id\":719095483,\"parent-chain-id\":11155111,\"chain-name\":\"symbiosis-nitro-testnet-zmhy1\",\"chain-config\":{\"chainId\":719095483,\"homesteadBlock\":0,\"daoForkBlock\":null,\"daoForkSupport\":true,\"eip150Block\":0,\"eip150Hash\":\"0x0000000000000000000000000000000000000000000000000000000000000000\",\"eip155Block\":0,\"eip158Block\":0,\"byzantiumBlock\":0,\"constantinopleBlock\":0,\"petersburgBlock\":0,\"istanbulBlock\":0,\"muirGlacierBlock\":0,\"berlinBlock\":0,\"londonBlock\":0,\"clique\":{\"period\":0,\"epoch\":0},\"arbitrum\":{\"EnableArbOS\":true,\"AllowDebugPrecompiles\":false,\"DataAvailabilityCommittee\":false,\"InitialArbOSVersion\":32,\"Celestia\":false,\"InitialChainOwner\":\"0x4a119826fd861b4984d1e6817e080e756bf5de60\",\"GenesisBlockNum\":0}},\"rollup\":{\"bridge\":\"0x44aC74F3dB3A5D2Aad03Dd17D7EDc311fa4199fc\",\"inbox\":\"0xAF695aD5789fC64b92977A39f55C144A18558c9f\",\"sequencer-inbox\":\"0x327BC7F21D34095e483EDF3Ca76ed22466Fe3cf4\",\"rollup\":\"0x5d6ab1a2d0b89989045AE892fC2E4E3eB1083DA1\",\"validator-utils\":\"0xd9F00104B2441f6fEe7780a88a4510dB693EC659\",\"validator-wallet-creator\":\"0x59caB1B944810B3c46bF154ca6E1dC96600C8c4b\",\"deployed-at\":8263679}}]",
+		"name": "symbiosis-nitro-testnet-zmhy1"
+	},
+	"parent-chain": { "connection": { "url": "http://l1-proxy:8080" } },
+	"http": {
+		"addr": "0.0.0.0",
+		"port": 8545,
+		"vhosts": "*",
+		"corsdomain": "*",
+		"api": ["eth", "net", "web3", "arb", "debug", "txpool"]
+	},
+	"ws": {
+		"addr": "0.0.0.0",
+		"port": 8546,
+		"api": ["eth", "net", "web3", "arb", "txpool"]
+	},
+	"node": {
+		"feed": { "output": { "enable": false, "port": 9642 } },
+		"sequencer": false,
+		"delayed-sequencer": { "enable": false },
+		"seq-coordinator": {
+			"enable": false,
+			"redis-url": "",
+			"lockout-duration": "30s",
+			"lockout-spare": "1s",
+			"my-url": "",
+			"retry-interval": "0.5s",
+			"seq-num-duration": "24h0m0s",
+			"update-interval": "3s"
+		},
+		"batch-poster": { "max-size": 80000, "enable": false },
+		"staker": { "enable": false, "strategy": "MakeNodes" },
+		"dangerous": { "no-sequencer-coordinator": false }
+	},
+	"execution": {
+		"caching": { "archive": true },
+		"sequencer": {
+			"max-tx-data-size": 75000,
+			"enable": false,
+			"max-block-speed": "100ms"
+		}
+	}
+}
