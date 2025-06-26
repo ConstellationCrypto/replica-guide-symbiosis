@@ -5,3 +5,4 @@
 
 ## Image
 `offchainlabs/nitro-node:v3.5.2-33d30c0`
+arbitrum stack
